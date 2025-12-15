@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGO Program Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Program Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
+  <header>
     <h1>NGO Program Dashboard</h1>
+  </header>
 
-    <h2>Upload CSV / Excel Data</h2>
+  <section class="upload-section card">
+    <h2>Upload CSV / Excel</h2>
     <input type="file" id="fileInput" accept=".csv, .xlsx">
+  </section>
 
+  <section class="filter-section card">
     <h2>Filters</h2>
-    <label for="regionFilter">Region:</label>
-    <select id="regionFilter"><option value="">All</option></select>
+    <div class="filters">
+      <label>Region:
+        <select id="regionFilter"><option value="">All</option></select>
+      </label>
+      <label>District:
+        <select id="districtFilter"><option value="">All</option></select>
+      </label>
+      <label>Date Completed:
+        <input type="date" id="dateFilter">
+      </label>
+      <button id="applyFilters">Apply Filters</button>
+    </div>
+  </section>
 
-    <label for="districtFilter">District:</label>
-    <select id="districtFilter"><option value="">All</option></select>
+  <section class="table-section card">
+    <h2>Program Data</h2>
+    <div class="table-container">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Team ID</th>
+            <th>EA ID</th>
+            <th>EA</th>
+            <th>Region</th>
+            <th>District</th>
+            <th>Ward</th>
+            <th>Date Completed</th>
+            <th>HH Selected</th>
+            <th>HH Interview Final Result</th>
+            <th>HH Interviews Complete?</th>
+            <th>HIV Final Result</th>
+            <th>Testing Complete?</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
 
-    <label for="dateFilter">Date Completed:</label>
-    <input type="date" id="dateFilter">
-
-    <button id="applyFilters">Apply Filters</button>
-
-    <h2>Program Data Table</h2>
-    <div id="tableContainer"></div>
-
+  <section class="chart-section card">
     <h2>Charts</h2>
-    <canvas id="chartHHComplete" width="800" height="400"></canvas>
-    <canvas id="chartHIVResult" width="800" height="400"></canvas>
-    <canvas id="chartTestingComplete" width="800" height="400"></canvas>
+    <div class="charts-container">
+      <canvas id="chartHHComplete"></canvas>
+      <canvas id="chartHIVResult"></canvas>
+      <canvas id="chartTestingComplete"></canvas>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
