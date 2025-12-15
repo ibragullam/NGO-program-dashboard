@@ -1,81 +1,50 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f7f9;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-  background-color: #2c3e50;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
 h1, h2 {
-  margin: 0.5rem 0;
+    text-align: center;
+    color: #333;
 }
 
-.card {
-  background-color: #fff;
-  margin: 1rem auto;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  max-width: 1200px;
+.user-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
+.user-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
 }
 
-.filters label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
+.user-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  height: 40px;
+.user-card h3 {
+    margin: 10px 0 5px 0;
 }
 
-button:hover {
-  background-color: #2980b9;
-}
-
-.table-container {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th, table td {
-  padding: 0.5rem;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-
-.charts-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-canvas {
-  flex: 1 1 300px;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
+.user-card p {
+    margin: 5px 0;
 }

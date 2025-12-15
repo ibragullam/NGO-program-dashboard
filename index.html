@@ -1,73 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NGO Program Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO User Ticket Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>NGO Program Dashboard</h1>
-  </header>
+    <div class="container">
+        <h1>NGO User Ticket Dashboard</h1>
 
-  <section class="upload-section card">
-    <h2>Upload CSV / Excel</h2>
-    <input type="file" id="fileInput" accept=".csv, .xlsx">
-  </section>
+        <div class="user-cards">
+            <!-- User Cards -->
+            <div class="user-card" id="user-Ibrahim">
+                <img src="images/ibrahim.jpg" alt="Ibrahim">
+                <h3>Ibrahim</h3>
+                <p>Open: <span class="open">5</span></p>
+                <p>Ongoing: <span class="ongoing">3</span></p>
+                <p>Closed: <span class="closed">7</span></p>
+                <p>Total Completed: <span class="total">7</span></p>
+            </div>
 
-  <section class="filter-section card">
-    <h2>Filters</h2>
-    <div class="filters">
-      <label>Region:
-        <select id="regionFilter"><option value="">All</option></select>
-      </label>
-      <label>District:
-        <select id="districtFilter"><option value="">All</option></select>
-      </label>
-      <label>Date Completed:
-        <input type="date" id="dateFilter">
-      </label>
-      <button id="applyFilters">Apply Filters</button>
+            <div class="user-card" id="user-Amina">
+                <img src="images/amina.jpg" alt="Amina">
+                <h3>Amina</h3>
+                <p>Open: <span class="open">2</span></p>
+                <p>Ongoing: <span class="ongoing">4</span></p>
+                <p>Closed: <span class="closed">6</span></p>
+                <p>Total Completed: <span class="total">6</span></p>
+            </div>
+
+            <div class="user-card" id="user-Urio">
+                <img src="images/urio.jpg" alt="Urio">
+                <h3>Urio</h3>
+                <p>Open: <span class="open">3</span></p>
+                <p>Ongoing: <span class="ongoing">2</span></p>
+                <p>Closed: <span class="closed">5</span></p>
+                <p>Total Completed: <span class="total">5</span></p>
+            </div>
+
+            <div class="user-card" id="user-Monica">
+                <img src="images/monica.jpg" alt="Monica">
+                <h3>Monica</h3>
+                <p>Open: <span class="open">1</span></p>
+                <p>Ongoing: <span class="ongoing">5</span></p>
+                <p>Closed: <span class="closed">8</span></p>
+                <p>Total Completed: <span class="total">8</span></p>
+            </div>
+
+            <div class="user-card" id="user-Joseph">
+                <img src="images/joseph.jpg" alt="Joseph">
+                <h3>Joseph</h3>
+                <p>Open: <span class="open">4</span></p>
+                <p>Ongoing: <span class="ongoing">3</span></p>
+                <p>Closed: <span class="closed">9</span></p>
+                <p>Total Completed: <span class="total">9</span></p>
+            </div>
+        </div>
+
+        <h2>Ticket Status Chart</h2>
+        <canvas id="ticketChart" width="800" height="400"></canvas>
     </div>
-  </section>
 
-  <section class="table-section card">
-    <h2>Program Data</h2>
-    <div class="table-container">
-      <table id="dataTable">
-        <thead>
-          <tr>
-            <th>Team ID</th>
-            <th>EA ID</th>
-            <th>EA</th>
-            <th>Region</th>
-            <th>District</th>
-            <th>Ward</th>
-            <th>Date Completed</th>
-            <th>HH Selected</th>
-            <th>HH Interview Final Result</th>
-            <th>HH Interviews Complete?</th>
-            <th>HIV Final Result</th>
-            <th>Testing Complete?</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="chart-section card">
-    <h2>Charts</h2>
-    <div class="charts-container">
-      <canvas id="chartHHComplete"></canvas>
-      <canvas id="chartHIVResult"></canvas>
-      <canvas id="chartTestingComplete"></canvas>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
